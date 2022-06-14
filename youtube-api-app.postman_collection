@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "bd3ee41e-ce20-4e85-aa40-3f3bef968d02",
+		"name": "FamPay YT Assignment Yashi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13711302"
+	},
+	"item": [
+		{
+			"name": "Fetch Videos From DB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/fetch?page_id=0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"fetch"
+					],
+					"query": [
+						{
+							"key": "page_id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/search?title=dogs&description=cute",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "dogs"
+						},
+						{
+							"key": "description",
+							"value": "cute"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		}
+	]
+}

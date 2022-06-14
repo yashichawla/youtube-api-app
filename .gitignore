@@ -1,8 +1,8 @@
 .vscode/
 __pycache__/
 
+src/
 data/
 model/
 *.log
 .env
-src/

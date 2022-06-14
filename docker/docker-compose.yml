@@ -1,0 +1,48 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/flask.dockerfile
+    ports:
+      - "5000:5000"
+    container_name: flask
+    depends_on:
+      - postgres
+    restart: on-failure
+    links:
+      - postgres
+    environment:
+      - "QUERY=${QUERY}"
+      - "TIME=${TIME}"
+      - "MAX_RESULTS=${MAX_RESULTS}"
+      - "HOST=${HOST}"
+      - "PORT=${PORT}"
+
+  grafana:
+    build:
+      context: ..
+      dockerfile: docker/grafana.dockerfile
+    ports:
+      - "3000:3000"
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel,aidanmountford-html-panel,goshposh-metaqueries-datasource,grafana-worldmap-panel,marcusolsson-gannt-panel
+  
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5432"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
