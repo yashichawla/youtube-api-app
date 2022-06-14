@@ -64,7 +64,7 @@ You can view the data in a Grafana dashboard by visiting `localhost:3000` and na
 
 # How to setup the application
 
-1. The first step is to download the fastText embedding model for query retrieval. You can download the pretrained model from [here](https://drive.google.com/drive/folders/1R6HtfCD2L5OFYOLgdQatRnVJHtxvq1z8?usp=sharing). Place both the `.bin` and `.npy` files in a folder named `model` in the root of the application.
+1. The first step is to download the fastText embedding model for query retrieval. You can download the pretrained models from [here](https://drive.google.com/drive/folders/1R6HtfCD2L5OFYOLgdQatRnVJHtxvq1z8?usp=sharing). Choose any of the pretrained model folders (`text8` or `wiki`) and download the contents. Place both the `.bin` and `.npy` files in a folder named `model` in the root of the application.
 
 2. Create a `.env` file with the following variables. 
     - Replace `YOUTUBE_API_KEY` with your own YouTube API key (you can follow the instructions [here](https://developers.google.com/youtube/v3/getting-started) to get one
