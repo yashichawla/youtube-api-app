@@ -20,6 +20,8 @@ You can use the youtube-api-app by sending simple `GET` requests to the respecti
 | `thumbnail_url` 	| The URL to the high resolution thumbnail of the YouTube video 	|
 | `published_at`  	| The timestamp (ISO 8601) at which the video was posted        	|
 
+A Postman collection has been included in the `test/` directory. You can use it to test the application's endpoints.
+
 ## Fetch Videos from Database
 
 You can fetch paginated videos from the database by sending a `GET` request to the `/fetch` endpoint.
@@ -55,6 +57,10 @@ curl --location --request GET 'localhost:5000/search?title=dogs&description=cute
 | Field        	| Description                                              	|
 |--------------	|----------------------------------------------------------	|
 | `items`        	| A list of key-value mappings with details for each video 	|
+
+## View Dashboard
+
+You can view the data in a Grafana dashboard by visiting `localhost:3000` and navigating to the `FamPay` dashboard.
 
 # How to setup the application
 

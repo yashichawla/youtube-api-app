@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "bd3ee41e-ce20-4e85-aa40-3f3bef968d02",
-		"name": "FamPay YT Assignment Yashi",
+		"_postman_id": "f0b26349-f7ad-4bc4-ad20-23593599983c",
+		"name": "YouTube API Application",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "13711302"
+		"_exporter_id": "14347897"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/fetch?page_id=0",
+					"raw": "localhost:5000/fetch?page_id=1",
 					"host": [
 						"localhost"
 					],
@@ -23,7 +23,7 @@
 					"query": [
 						{
 							"key": "page_id",
-							"value": "0"
+							"value": "1"
 						}
 					]
 				}
@@ -36,7 +36,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/search?title=dogs&description=cute",
+					"raw": "localhost:5000/search?title=dogs&description=cute and friendly",
 					"host": [
 						"localhost"
 					],
@@ -51,7 +51,7 @@
 						},
 						{
 							"key": "description",
-							"value": "cute"
+							"value": "cute and friendly"
 						}
 					]
 				}
