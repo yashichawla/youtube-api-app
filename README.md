@@ -87,13 +87,13 @@ You can view the data in a Grafana dashboard by visiting `localhost:3000` and na
 
 4. While building the application, you can specify the following command line arguments. All of the arguments are optional and they will take their default values if no argument is provided. You can also change the default values arguments for the application in `app/app.py`
     
-    | Argument    	| Description                                     	|
-    |-------------	|-------------------------------------------------	|
-    | `QUERY`       	| Your query                                      	|
-    | `TIME`        	| Time interval in minutes to fetch results       	|
-    | `MAX_RESULTS` 	| Total number of results to return during search 	|
-    | `HOST`        	| Host IP on which to run the application         	|
-    | `PORT`        	| Port number on which to run the application     	|
+    | Argument    	| Default 	| Description                                     	|
+    |-------------	|---------	|-------------------------------------------------	|
+    | `QUERY`       	| fampay  	| Your query                                      	|
+    | `TIME`        	| 10      	| Time interval in minutes to fetch results       	|
+    | `MAX_RESULTS` 	| 5      	| Total number of results to return during search 	|
+    | `HOST`        	| 0.0.0.0 	| Host IP on which to run the application         	|
+    | `PORT`        	| 5000    	| Port number on which to run the application     	|
 
     Specify the argument as `VARIABLE=VALUE` before the docker-compose command.
     
