@@ -10,14 +10,12 @@ load_dotenv()
 
 class YouTubeAPI:
     def __init__(
-        self, search_query, time_interval_minutes, db, search_model, max_results=25
-    ):
+        self, search_query, time_interval_minutes, db, search_model):
         """
         Initialize the database connection object, data fetching configuration and API endpoint
         """
         self.search_query = search_query
         self.time_interval_minutes = time_interval_minutes
-        self.max_results = max_results
         self.db = db
         self.search_model = search_model
         self.API_KEY = os.environ.get("YOUTUBE_API_KEY")
@@ -36,7 +34,7 @@ class YouTubeAPI:
             "part": "snippet",
             "q": query,
             "key": self.API_KEY,
-            "maxResults": self.max_results,
+            "maxResults": 25,
             "order": "date",
             "type": "video",
             "publishedAfter": published_after,

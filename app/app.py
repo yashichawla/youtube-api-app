@@ -19,7 +19,7 @@ parser.add_argument(
     help="Time interval in minutes",
     default=10,
 )
-parser.add_argument("--max-results", help="Max results", default=25)
+parser.add_argument("--max-results", help="Max results while searching", default=5)
 parser.add_argument("--debug", action="store_true", help="Debug mode")
 parser.add_argument("--host", help="Host", default="0.0.0.0")
 parser.add_argument("--port", help="Port", default=5000)
@@ -79,11 +79,11 @@ def parse_arguments():
             and isinstance(args.max_results, str)
             and not args.max_results
         ):
-            args.max_results = 25
+            args.max_results = 5
         else:
             args.max_results = int(args.max_results)
     except ValueError:
-        args.max_results = 25
+        args.max_results = 5
 
 
 @app.route("/")
@@ -144,7 +144,7 @@ def search():
     query = f"{title_query} {description_query}".strip()
 
     # find most similar results and return
-    results = search_model.get_similar_videos(query)
+    results = search_model.get_similar_videos(query, args.max_results)
     results = {
         "items": results,
     }
@@ -166,7 +166,7 @@ if __name__ == "__main__":
     db = VideoDatabase()
     search_model = SearchModel(db)
     api = YouTubeAPI(
-        args.query, args.time_interval_minutes, db, search_model, args.max_results
+        args.query, args.time_interval_minutes, db, search_model
     )
 
     # initialize the scheduler and start the job
