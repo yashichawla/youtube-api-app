@@ -67,9 +67,9 @@ You can view the data in a Grafana dashboard by visiting `localhost:3000` and na
 1. The first step is to download the fastText embedding model for query retrieval. You can download the pretrained models from [here](https://drive.google.com/drive/folders/1R6HtfCD2L5OFYOLgdQatRnVJHtxvq1z8?usp=sharing). Choose any of the pretrained model folders (choose `text8` for better speed or `wiki` for better matches) and download the contents. Place both the `.bin` and `.npy` files in a folder named `model` in the root of the application.
 
 2. Create a `.env` file with the following variables. 
-    - Replace `YOUTUBE_API_KEY` with your own YouTube API key (you can follow the instructions [here](https://developers.google.com/youtube/v3/getting-started) to get one
+    - Replace `YOUTUBE_API_KEY` with your own YouTube API key - you can follow the instructions [here](https://developers.google.com/youtube/v3/getting-started) to get one
     - Leave `GRAFANA_API_KEY` empty for now - we will replace it later
-    - If you would like to usea different database connection for the application, you can replace `DATABASE_URL` with your own connection string and `DATABASE_*` variables with the corresponding credentials
+    - If you would like to use a different database connection for the application, you can replace `DATABASE_URL` with your own connection string and `DATABASE_*` variables with the corresponding credentials
 
     ```bash
     YOUTUBE_API_KEY=""
